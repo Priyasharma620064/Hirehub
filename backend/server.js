@@ -16,6 +16,7 @@ const corsOptions = {
             'http://localhost:5173',
             'http://localhost:3000',
             'https://hirehub-tan.vercel.app',
+            'https://hirehub-tau-one.vercel.app',
             process.env.FRONTEND_URL
         ];
         // Allow requests with no origin (mobile apps, Postman, etc.)

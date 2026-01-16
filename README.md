@@ -4,11 +4,8 @@ A full-stack job portal built with the MERN stack. This platform connects job se
 
 ## 🔗 Live Demo
 
-[View Live Demo](#) <!-- Add your deployed link here -->
+[View Live Demo](https://hirehub-tau-one.vercel.app)
 
-## � Screenshots
-
-<!-- Add screenshots here -->
 
 ## ✨ Features
 
@@ -51,7 +48,7 @@ A full-stack job portal built with the MERN stack. This platform connects job se
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/HireHub.git
+git clone https://github.com/Priyasharma620064/HireHub.git
 cd HireHub
 ```
 
@@ -143,7 +140,7 @@ This project is open source and available under the MIT License.
 
 **Priya Sharma**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@Priyasharma620064](https://github.com/Priyasharma620064)
 
 ## � Acknowledgments
 
