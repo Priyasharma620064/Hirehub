@@ -16,7 +16,8 @@ app.use((req, res, next) => {
         'http://localhost:5173',
         'http://localhost:3000',
         'https://hirehub-tan.vercel.app',
-        'https://hirehub-tau-one.vercel.app'
+        'https://hirehub-tau-one.vercel.app',
+        process.env.FRONTEND_URL
     ];
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin)) {
