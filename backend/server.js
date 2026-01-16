@@ -10,22 +10,27 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const corsOptions = {
-    origin: [
+// CORS Middleware
+app.use((req, res, next) => {
+    const allowedOrigins = [
         'http://localhost:5173',
         'http://localhost:3000',
         'https://hirehub-tan.vercel.app',
         'https://hirehub-tau-one.vercel.app'
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-    exposedHeaders: ['Content-Range', 'X-Content-Range'],
-    maxAge: 86400 // 24 hours
-};
+    ];
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+    res.header('Access-Control-Allow-Credentials', 'true');
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Handle preflight requests
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    next();
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
